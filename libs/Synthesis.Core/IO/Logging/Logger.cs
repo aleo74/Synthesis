@@ -69,11 +69,9 @@ public sealed class Logger(string categoryName) : ILogger
         
         var formatted = Format(DateTime.Now, logLevel, categoryName, originalFormat.ToString(), items);
 
-        var task = logLevel is LogLevel.Error or LogLevel.Critical
+        _ = logLevel is LogLevel.Error or LogLevel.Critical
             ? _errorWriter.WriteLineAsync(formatted)
             : _writer.WriteLineAsync(formatted);
-        
-        task.Forget();
     }
     
     private static string Format(DateTime timestamp, LogLevel level, string categoryName, ReadOnlySpan<char> template, IDictionary<string, object> items)
