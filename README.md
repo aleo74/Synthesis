@@ -1,11 +1,14 @@
 # Synthesis
 
+[![.NET](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/jimmy-mll/Synthesis)](https://github.com/jimmy-mll/Synthesis/issues)
 [![GitHub stars](https://img.shields.io/github/stars/jimmy-mll/Synthesis)](https://github.com/jimmy-mll/Synthesis/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/jimmy-mll/Synthesis)](https://github.com/jimmy-mll/Synthesis/network)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/jimmy-mll/Synthesis)](https://github.com/jimmy-mll/Synthesis/pulls)
 [![GitHub contributors](https://img.shields.io/github/contributors/jimmy-mll/Synthesis)](https://github.com/jimmy-mll/Synthesis/graphs/contributors)
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/jimmy-mll/Synthesis/dotnet.yml)
+![GitHub repo size](https://img.shields.io/github/repo-size/jimmy-mll/Synthesis)
 
 Welcome to the Synthesis project, aiming to recreate the classic Dofus game experience from version 2.12, while maintaining a professional and clean codebase.
 
