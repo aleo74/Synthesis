@@ -11,16 +11,19 @@ Welcome to the Synthesis project, aiming to recreate the classic Dofus game expe
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Getting Started](#getting-started)
-- [Features](#features)
-- [Changelog](#changelog)
-- [Contribution](#contribution)
-- [License](#license)
+- [Synthesis](#synthesis)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+  - [Changelog](#changelog)
+  - [Contribution](#contribution)
+  - [License](#license)
 
 ## Introduction
 
-Dofus 2.12 Emulator is a community-driven project focused on emulating the beloved Dofus 2.12 version. Our mission is to provide a nostalgic and authentic experience while ensuring the highest quality and professionalism in code development.
+Synthesis is a community-driven project focused on emulating the beloved Dofus 2.12 version. Our mission is to provide a nostalgic and authentic experience while ensuring the highest quality and professionalism in code development.
 
 ## Getting Started
 
@@ -47,8 +50,8 @@ cd Synthesis
 3. Run the project:
 
 ```sh
-dotnet run src/servers/Synthesis.Servers.AuthServer.csproj
-dotnet run src/servers/Synthesis.Servers.GameServer.csproj
+dotnet run src/Synthesis.Servers.AuthServer.csproj
+dotnet run src/Synthesis.Servers.GameServer.csproj
 ```
 
 ## Changelog
