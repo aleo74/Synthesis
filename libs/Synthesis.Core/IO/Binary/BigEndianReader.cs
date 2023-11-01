@@ -4,7 +4,7 @@ using System.Text;
 namespace Synthesis.Core.IO.Binary;
 
 /// <summary>
-/// Reads binary data in big-endian format from a provided <see cref="ReadOnlyMemory{T}"/>.
+/// Reads binary data in big-endian format.
 /// </summary>
 public sealed class BigEndianReader(ReadOnlyMemory<byte> buffer)
 {
