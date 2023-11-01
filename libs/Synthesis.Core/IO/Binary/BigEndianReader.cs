@@ -17,13 +17,13 @@ public sealed class BigEndianReader(ReadOnlyMemory<byte> buffer)
     /// <summary>
     /// Gets the current position within the reader.
     /// </summary>
-    public int Position { get; private set; }
+    public int Cursor { get; private set; }
     
     /// <summary>
     /// Gets the remaining free capacity within the reader.
     /// </summary>
     public int FreeCapacity =>
-        Capacity - Position;
+        Capacity - Cursor;
     
     /// <summary>
     /// Reads an unsigned 8-bit integer from the current position.
@@ -107,21 +107,21 @@ public sealed class BigEndianReader(ReadOnlyMemory<byte> buffer)
     /// </summary>
     /// <returns>The read string.</returns>
     public string ReadUtf() =>
-        ReadUtf(ReadUInt16());
+        ReadUtfBytes(ReadUInt16());
     
     /// <summary>
     /// Reads a big UTF-8 encoded string from the current position.
     /// </summary>
     /// <returns>The read string.</returns>
     public string ReadBigUtf() =>
-        ReadUtf(ReadInt32());
+        ReadUtfBytes(ReadInt32());
     
     /// <summary>
     /// Reads a UTF-8 encoded string of the specified size from the current position.
     /// </summary>
     /// <param name="size">The size (in bytes) of the string to read.</param>
     /// <returns>The read string.</returns>
-    public string ReadUtf(int size) =>
+    public string ReadUtfBytes(int size) =>
         Encoding.UTF8.GetString(ReadBytes(size));
 
     /// <summary>
@@ -135,9 +135,9 @@ public sealed class BigEndianReader(ReadOnlyMemory<byte> buffer)
         if (size > FreeCapacity)
             throw new OutOfMemoryException("Not enough free capacity to read memory.");
         
-        var memory = buffer.Slice(Position, size);
+        var memory = buffer.Slice(Cursor, size);
         
-        Position += size;
+        Cursor += size;
         
         return memory;
     }
@@ -185,10 +185,10 @@ public sealed class BigEndianReader(ReadOnlyMemory<byte> buffer)
     /// <param name="origin">The seek origin (beginning, current, or end).</param>
     /// <param name="offset">The offset value.</param>
     public void Seek(SeekOrigin origin, int offset) =>
-        Position = origin switch
+        Cursor = origin switch
         {
             SeekOrigin.Begin => offset,
-            SeekOrigin.Current => Position + offset,
+            SeekOrigin.Current => Cursor + offset,
             SeekOrigin.End => Capacity - Math.Abs(offset),
             _ => throw new ArgumentOutOfRangeException(nameof(origin))
         };
