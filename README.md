@@ -1,6 +1,5 @@
 # Synthesis
 
-[![.NET](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/jimmy-mll/Synthesis)](https://github.com/jimmy-mll/Synthesis/issues)
 [![GitHub stars](https://img.shields.io/github/stars/jimmy-mll/Synthesis)](https://github.com/jimmy-mll/Synthesis/stargazers)
